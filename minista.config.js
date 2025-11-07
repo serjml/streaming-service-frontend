@@ -1,5 +1,6 @@
 // minista.config.ts
 import { defineConfig } from "minista"
+import path from 'path'
 
 export default defineConfig({
   root: "",
@@ -62,7 +63,10 @@ export default defineConfig({
     },
   },
   resolve: {
-    alias: [],
+    alias: [{
+      find: '@/',
+      replacement: path.resolve('src') + '/'
+    }],
   },
   css: {
     modules: {
