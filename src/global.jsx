@@ -1,3 +1,4 @@
+import '@/styles'
 import { Head } from "minista"
 import Header from '@/layouts/Header'
 import Footer from '@/layouts/Footer'

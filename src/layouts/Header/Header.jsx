@@ -1,6 +1,8 @@
+import './Header.scss'
+
 export default () => {
   return (
-    <header>
+    <header className="header">
       Header
     </header>
   )
