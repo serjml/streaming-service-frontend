@@ -1,6 +1,7 @@
 import './Header.scss'
 import Logo from '@/components/Logo'
 import clsx from 'clsx'
+import Button from '@/components/Button'
 
 export default (props) => {
   const {
@@ -44,6 +45,8 @@ export default (props) => {
             ))}
           </ul>
         </nav>
+        <div className="header__actions">
+        </div>
       </div>
     </header>
   )
