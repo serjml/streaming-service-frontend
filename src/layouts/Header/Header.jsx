@@ -2,6 +2,7 @@ import './Header.scss'
 import Logo from '@/components/Logo'
 import clsx from 'clsx'
 import Button from '@/components/Button'
+import BurgerButton from '@/components/BurgerButton'
 
 export default (props) => {
   const {
@@ -61,6 +62,9 @@ export default (props) => {
             iconName="notification"
           />
         </div>
+        <BurgerButton
+          className="header__burger-button"
+        />
       </div>
     </header>
   )
