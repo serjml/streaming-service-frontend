@@ -4,7 +4,7 @@ import clsx from 'clsx'
 export default (props) => {
   const {
     className,
-
+    extraAttrs,
   } = props
 
   const title = "Open menu"
@@ -15,6 +15,7 @@ export default (props) => {
       type="button"
       aria-label={title}
       title={title}
+      {...extraAttrs}
     >
       <svg
         className="burger-button__svg"
