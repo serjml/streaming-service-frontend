@@ -42,6 +42,8 @@ export default () => {
     },
   ]
 
+  const extraLinks = ['Terms of Use', 'Privacy Policy', 'Cookie Policy']
+
   return (
     <footer className="footer">
       <div className="footer__inner container">
@@ -77,7 +79,22 @@ export default () => {
             </div>
           ))}
         </nav>
-        <div className="footer__extra"></div>
+        <div className="footer__extra">
+          <p className="footer__copyright">
+            @<time dateTime="2023">2023</time> streamvib, All Rights Reserved
+          </p>
+          <div className="footer__extra-links">
+            {extraLinks.map((link, index) => (
+              <a
+                class="footer__extra-link"
+                href="/"
+                key={index}
+              >
+                {link}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </footer>
   )
