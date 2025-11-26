@@ -13,6 +13,7 @@ export default (props) => {
     isLabelHidden = false,
     iconName,
     iconPosition = 'before',
+    hasFillIcon
   } = props
 
   const isLink = href !== undefined
@@ -25,6 +26,7 @@ export default (props) => {
     <Icon
       className="button__icon"
       name={iconName}
+      hasFill={hasFillIcon}
     />
   )
 

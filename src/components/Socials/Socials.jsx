@@ -12,7 +12,7 @@ export default (props) => {
     <div
       className={clsx('soc1als', className)}
     >
-      <ul className="soc1al__list">
+      <ul className="soc1als__list">
         {links.map(({ label, iconName}, index) => (
           <li className="soc1als__item" key={index}>
             <Button
@@ -23,6 +23,7 @@ export default (props) => {
               label={label}
               isLabelHidden
               iconName={iconName}
+              hasFillIcon
             />
           </li>
         ))}
