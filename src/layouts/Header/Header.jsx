@@ -7,6 +7,7 @@ import BurgerButton from '@/components/BurgerButton'
 export default (props) => {
   const {
     url,
+    isFixed,
   } = props
 
   const menuItems = [
@@ -30,7 +31,9 @@ export default (props) => {
 
   return (
     <header
-      className="header"
+      className={clsx('header', {
+        'is-fixed': isFixed,
+      })}
       data-js-overlay-menu=""
     >
       <div className="header__inner container">
