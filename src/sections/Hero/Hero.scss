@@ -24,7 +24,7 @@
         to top,
         var( --heroGradientColorStart) 0%,
         var(--heroGradientColorEnd) 100%
-    ) 50% 100%/100% var(--heroGradientHeight);
+    ) 50% 100.1%/100% var(--heroGradientHeight);
 
     @include flex-center;
 
@@ -42,5 +42,14 @@
     padding: 0;
     background-color: transparent;
     border: none;
+  }
+
+  &__title {
+    margin-top: -1.5em;
+    margin-bottom: fluid-to-laptop(14, 10);
+  }
+
+  &__description {
+    margin-bottom: fluid(50, 30);
   }
 }
