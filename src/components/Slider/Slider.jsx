@@ -1,11 +1,13 @@
 import 'swiper/css'
 import './Slider.scss'
 import clsx from 'clsx'
+import SliderNavigation from './components/SliderNavigation'
 
 export default (props) => {
   const {
     children,
     className,
+    navigationTargetElementId = null,
   } = props
 
   return (
@@ -21,6 +23,10 @@ export default (props) => {
           ))}
         </ul>
       </div>
+
+      {!navigationTargetElementId && (
+        <SliderNavigation className="slider-navigation"/>
+      )}
     </div>
   )
 }
