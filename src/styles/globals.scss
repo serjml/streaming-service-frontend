@@ -76,7 +76,7 @@ svg * {
 a {
   color: inherit;
 
-  @include hover{
+  @include hover {
     color: var(--color-red-45);
   }
 
@@ -87,4 +87,8 @@ a {
 
 :focus-visible {
   @include focus-visible;
+}
+
+:has(.swiper) {
+  min-width: 0;
 }

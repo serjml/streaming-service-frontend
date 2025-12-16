@@ -1,4 +1,6 @@
 import getParams from '@/utils/getParams'
+import Swiper from 'swiper'
+import {Navigation, Pagination} from 'swiper/modules'
 
 const rootSelector = '[data-js-slider]'
 
@@ -20,11 +22,25 @@ class Slider {
       ? document.getElementById(this.params.navigationTargetElementId)
       : this.rootElement.querySelector(this.selectors.navigation)
     this.previousButtonElement = this.navigationElement.querySelector(this.selectors.previousButton)
-    this.pagination = this.navigationElement.querySelector(this.selectors.pagination)
+    this.nextButtonElement = this.navigationElement.querySelector(this.selectors.nextButton)
+    this.paginationElement = this.navigationElement.querySelector(this.selectors.pagination)
     this.init()
   }
 
   init() {
+    new Swiper(this.swiperElement, {
+      ...this.params.sliderParams,
+      modules: [Navigation, Pagination],
+      navigation: {
+        prevEl: this.previousButtonElement,
+        nextEl: this.nextButtonElement,
+      },
+      pagination: {
+        el: this.paginationElement,
+        bulletClass: 'slider-navigation__pagination-bullet',
+        bulletActiveClass: 'is-active',
+      }
+    })
   }
 }
 
