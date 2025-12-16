@@ -13,13 +13,14 @@ export default (props) => {
     isLabelHidden = false,
     iconName,
     iconPosition = 'before',
-    hasFillIcon
+    hasFillIcon,
+    extraAttrs,
   } = props
 
   const isLink = href !== undefined
   const Component = isLink ? 'a' : 'button'
-  const linkProps = { href, target }
-  const buttonProps = { type }
+  const linkProps = {href, target}
+  const buttonProps = {type}
   const specificProps = isLink ? linkProps : buttonProps
   const title = isLabelHidden ? label : undefined
   const iconComponent = iconName && (
@@ -33,12 +34,13 @@ export default (props) => {
 
   return (
     <Component
-      className={clsx(className, "button", {
+      className={clsx(className, 'button', {
         [`button--${mode}`]: mode,
       })}
       title={title}
       aria-label={title}
       {...specificProps}
+      {...extraAttrs}
     >
       {iconPosition === 'before' && iconComponent}
       {!isLabelHidden && (
