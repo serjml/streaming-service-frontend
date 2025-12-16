@@ -1,6 +1,14 @@
-const rootSelector = ['data-js-slider']
+const rootSelector = '[data-js-slider]'
 
 class Slider {
+  selectors = {
+    root: rootSelector,
+    swiper: '[data-js-slider-swiper]',
+    navigation: '[data-js-slider-navigation]',
+    previousButton: '[data-js-slider-previous-button]',
+    nextButton: '[data-js-slider-next-button]',
+    pagination: '[data-js-slider-pagination]',
+  }
 }
 
 class SliderCollection {
