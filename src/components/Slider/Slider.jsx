@@ -2,16 +2,26 @@ import 'swiper/css'
 import './Slider.scss'
 import SliderNavigation from './components/SliderNavigation'
 
+const defaultSliderParams = {
+  slidesPerView: 5,
+  slidesPerGroup: 5,
+  spaceBetween: 30,
+}
+
 export default (props) => {
   const {
     children,
     navigationTargetElementId = null,
+    sliderParams = defaultSliderParams,
   } = props
 
   return (
     <div
       className="slider"
-      data-js-slider=""
+      data-js-slider={JSON.stringify({
+        sliderParams,
+        navigationTargetElementId,
+      })}
     >
       <div
         className="slider__swiper swiper"
