@@ -38,6 +38,7 @@ export default (props) => {
     navigationTargetElementId = null,
     sliderParams = defaultSliderParams,
     isBeyondTheViewportOnMobileS,
+    hasScrollbar = true,
   } = props
 
   return (
@@ -68,6 +69,13 @@ export default (props) => {
 
       {!navigationTargetElementId && (
         <SliderNavigation className="slider-navigation" />
+      )}
+
+      {hasScrollbar && (
+        <div
+          className="slider-scrollbar visible-mobile"
+          data-js-slider-scrollbar=""
+        />
       )}
     </div>
   )
