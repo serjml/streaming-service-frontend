@@ -26,7 +26,10 @@ export default (props) => {
     )}
     isActionsHiddenOnMobile
   >
-    <Slider navigationTargetElementId={sliderNavigationId}>
+    <Slider
+      navigationTargetElementId={sliderNavigationId}
+      isBeyondTheViewportOnMobileS
+    >
       {categoryItems.map((categoryItem, index) => (
         <CategoryCard {...categoryItem} key={index} />))}
     </Slider>

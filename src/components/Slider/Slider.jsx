@@ -1,6 +1,7 @@
 import 'swiper/css'
 import './Slider.scss'
 import SliderNavigation from './components/SliderNavigation'
+import clsx from 'clsx'
 
 const defaultSliderParams = {
   slidesPerView: 5,
@@ -36,11 +37,14 @@ export default (props) => {
     children,
     navigationTargetElementId = null,
     sliderParams = defaultSliderParams,
+    isBeyondTheViewportOnMobileS,
   } = props
 
   return (
     <div
-      className="slider"
+      className={clsx('slider', {
+        'slider--beyond-the-viewport-on-mobile-s': isBeyondTheViewportOnMobileS,
+      })}
       data-js-slider={JSON.stringify({
         sliderParams,
         navigationTargetElementId,
