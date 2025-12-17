@@ -73,7 +73,7 @@ export default (props) => {
 
       {hasScrollbar && (
         <div
-          className="slider-scrollbar visible-mobile"
+          className="slider__scrollbar visible-mobile"
           data-js-slider-scrollbar=""
         />
       )}

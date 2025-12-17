@@ -44,7 +44,7 @@ class Slider {
       },
       scrollbar: {
         el: this.scrollbarElement,
-        dragClass: 'slider-scrollbar-drag'
+        dragClass: 'slider__scrollbar-drag'
       },
     })
   }
