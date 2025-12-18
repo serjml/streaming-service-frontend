@@ -1,6 +1,7 @@
 import './Devices.scss'
 import clsx from 'clsx'
 import Section from '@/layouts/Section'
+import DeviceCard from '@/components/DeviceCard'
 
 export default (props) => {
   const {
@@ -14,7 +15,6 @@ export default (props) => {
       titleId="devices-title"
       description="With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere. Our platform is designed to be compatible with a wide range of devices, ensuring that you never miss a moment of entertainment."
     >
-
     </Section>
   )
 }
