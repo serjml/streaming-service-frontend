@@ -2,19 +2,54 @@ import './Devices.scss'
 import clsx from 'clsx'
 import Section from '@/layouts/Section'
 import DeviceCard from '@/components/DeviceCard'
+import Grid from '@/components/Grid'
 
-export default (props) => {
-  const {
-    className,
-  } = props
+export default () => {
+  const deviceItems = [
+    {
+      title: 'Smartphones',
+      description: 'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
+      imgSrc: '/devices/1.svg'
+    },
+    {
+      title: 'Tablet',
+      description: 'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
+      imgSrc: '/devices/2.svg'
+    },
+    {
+      title: 'Smart TV',
+      description: 'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
+      imgSrc: '/devices/3.svg'
+    },
+    {
+      title: 'Laptops',
+      description: 'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
+      imgSrc: '/devices/4.svg'
+    },
+    {
+      title: 'Gaming Consoles',
+      description: 'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
+      imgSrc: '/devices/5.svg'
+    },
+    {
+      title: 'VR Headsets ',
+      description: 'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
+      imgSrc: '/devices/6.svg'
+    },
+  ]
 
   return (
     <Section
-      className={clsx('devices', className)}
+      className="devices"
       title="We Provide you streaming experiencve across various devices."
       titleId="devices-title"
       description="With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere. Our platform is designed to be compatible with a wide range of devices, ensuring that you never miss a moment of entertainment."
     >
+      <Grid columns={3}>
+        {deviceItems.map((deviceItem, index) => (
+          <DeviceCard {...deviceItem} key={index} />
+        ))}
+      </Grid>
     </Section>
   )
 }
