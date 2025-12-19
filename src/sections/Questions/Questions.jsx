@@ -1,12 +1,19 @@
 import './Questions.scss'
-import clsx from 'clsx'
 import Section from '@/layouts/Section'
 import Button from '@/components/Button'
+import AccordionGroup from '@/components/AccordionGroup'
 
-export default (props) => {
-  const {
-    className,
-  } = props
+export default () => {
+  const questionItems = [
+    'What is StreamVibe?',
+    'How much does StreamVibe cost?',
+    'What content is available on StreamVibe?',
+    'How can I watch StreamVibe?',
+    'How do I sign up for StreamVibe?',
+    'What is the StreamVibe free trial?',
+    'How do I contact StreamVibe customer support?',
+    'What are the StreamVibe payment methods?',
+  ]
 
   return (
     <Section
@@ -20,7 +27,9 @@ export default (props) => {
         />
       )}
     >
-      Questions
+      <AccordionGroup columns={2}>
+        {questionItems}
+      </AccordionGroup>
     </Section>
   )
 }
