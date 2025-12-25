@@ -8,6 +8,9 @@ export default (props) => {
     type = 'button',
     href,
     target,
+    /**
+     * '' (default) | 'transparent' | 'black-10' | 'black-08'
+     */
     mode = '',
     label,
     isLabelHidden = false,

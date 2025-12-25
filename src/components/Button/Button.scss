@@ -33,7 +33,7 @@
   &:has(.button__icon:only-child) {
     @include square(fluid-to-laptop(56, 44));
 
-   padding: 0;
+    padding: 0;
   }
 
   &--transparent {
@@ -48,8 +48,16 @@
     }
   }
 
+  &--black-08,
+  &--black-10 {
+    border: var(--border);
+  }
+
+  &--black-08 {
+    background-color: var(--color-black-08);
+  }
+
   &--black-10 {
     background-color: var(--color-black-10);
-    border: var(--border);
   }
 }
