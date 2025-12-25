@@ -11,7 +11,7 @@ export default () => {
       <PlanCard
         title="1"
         description="1"
-        price={{value: 1, period: 1}}
+        price={{value: '$9999', period: 'month'}}
       />
     </Section>
   )
