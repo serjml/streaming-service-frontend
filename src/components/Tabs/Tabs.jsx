@@ -2,6 +2,7 @@ import './Tabs.scss'
 import clsx from 'clsx'
 import getTabsElementsIdsFromTitle
   from '@/components/Tabs/utils/getTabsElementsIdsFromTitle'
+import TabsNavigation from '@/components/Tabs/components/TabsNavigation'
 
 export default (props) => {
   const {
@@ -17,7 +18,10 @@ export default (props) => {
       data-js-tabs={JSON.stringify({navigationTargetElementId})}
     >
       {!navigationTargetElementId && (
-        <div>TABS NAVIGATION</div>
+        <TabsNavigation
+          title={title}
+          items={items}
+        />
       )}
       <div className="tabs__body">
         {items.map((item, index) => {
