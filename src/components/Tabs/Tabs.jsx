@@ -1,6 +1,7 @@
 import './Tabs.scss'
 import clsx from 'clsx'
-import getIdFromTitle from '@/utils/getIdFromTitle'
+import getTabsElementsIdsFromTitle
+  from '@/components/Tabs/utils/getTabsElementsIdsFromTitle'
 
 export default (props) => {
   const {
@@ -26,9 +27,7 @@ export default (props) => {
               isActive
             } = item
 
-            const titleFormatted = getIdFromTitle(title)
-            const buttonId = `${titleFormatted}-tab`
-            const contentId = `${titleFormatted}-tabpanel`
+            const {buttonId, contentId} = getTabsElementsIdsFromTitle(title)
 
             return (
               <div
