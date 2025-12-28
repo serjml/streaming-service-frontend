@@ -28,14 +28,16 @@ export default () => {
         items={planGroups.map((planGroup) => ({
           title: planGroup.title,
           isActive: planGroup.isActive,
-          children: (<Grid columns={3}>
-            {planGroup.items.map((planItem, index) => (
-              <PlanCard
-                {...planItem}
-                key={index}
-              />
-            ))}
-          </Grid>)
+          children: (
+            <Grid columns={3}>
+              {planGroup.items.map((planItem, index) => (
+                <PlanCard
+                  {...planItem}
+                  key={index}
+                />
+              ))}
+            </Grid>
+          )
         }))}
       />
     </Section>
