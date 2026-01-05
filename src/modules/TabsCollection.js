@@ -57,6 +57,32 @@ class Tabs {
     this.updateUI()
   }
 
+  activateTab = (newTabIndex) => {
+    this.state.activeTabIndex = newTabIndex
+    this.updateUI()
+    this.buttonElements[newTabIndex].focus()
+  }
+
+  previousTab = () => {
+    const newTabIndex = this.state.activeTabIndex === 0 ? this.limitTabsIndex : this.state.activeTabIndex - 1
+
+    this.activateTab(newTabIndex)
+  }
+
+  nextTab = () => {
+    const newTabIndex = this.state.activeTabIndex === this.limitTabsIndex ? 0 : this.state.activeTabIndex + 1
+
+    this.activateTab(newTabIndex)
+  }
+
+  firstTab = () => {
+    this.activateTab(0)
+  }
+
+  lastTab = () => {
+    this.activateTab(this.limitTabsIndex)
+  }
+
   onKeyDown = (event) => {
     const {target, code, metaKey} = event
 
@@ -76,17 +102,22 @@ class Tabs {
 
     const isMacHomeKey = metaKey && code === 'ArrowLeft'
     if (isMacHomeKey) {
+      event.preventDefault()
       this.firstTab()
       return
     }
 
     const isMacEndKey = metaKey && code === 'ArrowRight'
     if (isMacEndKey) {
+      event.preventDefault()
       this.lastTab()
       return
     }
 
-    action?.()
+    if (action) {
+      event.preventDefault()
+      action()
+    }
   }
 
   bindEvents() {
