@@ -25,19 +25,19 @@ class Tabs {
     this.navigationElement = this.params.navigationTargetElementId
       ? document.getElementById(this.params.navigationTargetElementId)
       : this.rootElement.querySelector(this.selectors.navigation)
-    this.buttonEements = [...this.navigationElement.querySelectorAll(this.selectors.button)]
+    this.buttonElements = [...this.navigationElement.querySelectorAll(this.selectors.button)]
     this.contentElements = [...this.rootElement.querySelectorAll(this.selectors.content)]
     this.state = {
-      activeTabIndex: this.buttonEements.findIndex((buttonElement) => buttonElement.ariaSelected)
+      activeTabIndex: this.buttonElements.findIndex((buttonElement) => buttonElement.ariaSelected)
     }
-    this.limitTabsIndex = this.buttonEements.length - 1
+    this.limitTabsIndex = this.buttonElements.length - 1
     this.bindEvents()
   }
 
   updateUI() {
     const {activeTabIndex} = this.state
 
-    this.buttonEements.forEach((buttonElement, index) => {
+    this.buttonElements.forEach((buttonElement, index) => {
       const isActive = index === activeTabIndex
 
       buttonElement.classList.toggle(this.stateClasses.isActive, isActive)
@@ -57,9 +57,43 @@ class Tabs {
     this.updateUI()
   }
 
+  onKeyDown = (event) => {
+    const {target, code, metaKey} = event
+
+    const isTabsContentFocused = this.contentElements.some((contentElement) => contentElement === target)
+    const isTabsButtonFocused = this.buttonElements.some((buttonElement) => buttonElement === target)
+
+    if (!isTabsButtonFocused && !isTabsContentFocused) {
+      return
+    }
+
+    const action = {
+      ArrowLeft: this.previousTab,
+      ArrowRight: this.nextTab,
+      Home: this.firstTab,
+      End: this.lastTab,
+    }[code]
+
+    const isMacHomeKey = metaKey && code === 'ArrowLeft'
+    if (isMacHomeKey) {
+      this.firstTab()
+      return
+    }
+
+    const isMacEndKey = metaKey && code === 'ArrowRight'
+    if (isMacEndKey) {
+      this.lastTab()
+      return
+    }
+
+    action?.()
+  }
+
   bindEvents() {
-    this.buttonEements.forEach((buttonElement, index) => {
+    this.buttonElements.forEach((buttonElement, index) => {
       buttonElement.addEventListener('click', () => this.onButtonClick(index))
+
+      document.addEventListener('keydown', this.onKeyDown)
     })
   }
 }
