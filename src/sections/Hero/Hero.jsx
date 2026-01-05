@@ -13,13 +13,13 @@ export default (props) => {
       <div className="hero__pano">
         <div className="hero__pano-inner container">
           <button
-            class="hero__play-button"
+            className="hero__play-button"
             type="button"
             aria-label={playButtonTitle}
             title={playButtonTitle}
           >
             <img
-              class="hero__play-button-image"
+              className="hero__play-button-image"
               src="/play.svg"
               alt=""
               width="470"

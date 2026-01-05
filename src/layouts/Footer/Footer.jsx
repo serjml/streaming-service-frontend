@@ -62,7 +62,10 @@ export default () => {
               {links?.length > 0 && (
                 <ul className="footer__menu-list">
                   {links.map((link, index) => (
-                    <li className="footer__menu-item" key={index}>
+                    <li
+                      className="footer__menu-item"
+                      key={index}
+                    >
                       <a
                         className="footer__menu-link"
                         href="/"
@@ -74,19 +77,24 @@ export default () => {
                 </ul>
               )}
               {socialLinks?.length > 0 && (
-                <Socials className="footer__soc1als" links={socialLinks} />
+                <Socials
+                  className="footer__soc1als"
+                  links={socialLinks}
+                />
               )}
             </div>
           ))}
         </nav>
         <div className="footer__extra">
           <p className="footer__copyright">
-            @<time dateTime="2023">2023</time> streamvib, All Rights Reserved
+            @
+            <time dateTime="2023">2023</time>
+            streamvib, All Rights Reserved
           </p>
           <div className="footer__extra-links">
             {extraLinks.map((link, index) => (
               <a
-                class="footer__extra-link"
+                className="footer__extra-link"
                 href="/"
                 key={index}
               >
