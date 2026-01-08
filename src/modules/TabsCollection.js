@@ -33,6 +33,7 @@ class Tabs {
     }
     this.limitTabsIndex = this.buttonElements.length - 1
     this.bindEvents()
+    this.bindObservers()
   }
 
   updateUI() {
@@ -57,7 +58,7 @@ class Tabs {
     })
   }
 
-  updateNavigationCSSVars(activeButtonElement) {
+  updateNavigationCSSVars(activeButtonElement = this.buttonElements[this.state.activeTabIndex]) {
     const {width, left} = activeButtonElement.getBoundingClientRect()
     const offsetLeft = left - this.navigationElement.getBoundingClientRect().left
 
@@ -146,6 +147,16 @@ class Tabs {
 
       document.addEventListener('keydown', this.onKeyDown)
     })
+  }
+
+  onResize = () => {
+    this.updateNavigationCSSVars()
+  }
+
+  bindObservers = () => {
+    const resizeObserver = new ResizeObserver(this.onResize)
+
+    resizeObserver.observe(this.navigationElement)
   }
 }
 
