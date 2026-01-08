@@ -33,7 +33,7 @@ class Tabs {
     }
     this.limitTabsIndex = this.buttonElements.length - 1
     this.bindEvents()
-    this.bindObservers()
+    setTimeout(this.bindObservers, 500)
   }
 
   updateUI() {
@@ -64,12 +64,12 @@ class Tabs {
 
     this.navigationElement.style.setProperty(
       this.stateCSSVariables.activeButtonWidth,
-      `${pxToRem(offsetLeft)}rem`
+      `${pxToRem(width)}rem`
     )
 
     this.navigationElement.style.setProperty(
       this.stateCSSVariables.activeButtonOffsetLeft,
-      `${pxToRem(width)}rem`
+      `${pxToRem(offsetLeft)}rem`
     )
   }
 
