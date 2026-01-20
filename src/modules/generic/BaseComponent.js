@@ -19,7 +19,7 @@ class BaseComponent {
           this.updateUI()
         }
 
-        return
+        return true
       },
     })
   }
