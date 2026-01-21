@@ -1,8 +1,9 @@
 import '@/styles'
-import { Head } from "minista"
+import {Head} from 'minista'
 import Header from '@/layouts/Header'
 import Footer from '@/layouts/Footer'
 import Content from '@/layouts/Content'
+import Banner from '@/sections/Banner'
 
 export default function (props) {
   const {
@@ -42,9 +43,13 @@ export default function (props) {
           href="/site.webmanifest"
         />
       </Head>
-      <Header url={url} isFixed={isHeaderFixed}/>
+      <Header
+        url={url}
+        isFixed={isHeaderFixed}
+      />
       <Content>
         {children}
+        <Banner />
       </Content>
       <Footer />
     </>
