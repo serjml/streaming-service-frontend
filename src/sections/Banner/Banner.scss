@@ -11,6 +11,16 @@
     url('../../assets/images/banner/bg.png') center/cover no-repeat;
     border: var(--border);
     border-radius: var(--border-radius-l);
+  
+    @include tablet {
+      flex-direction: column;
+      row-gap: 50px;
+      text-align: center;
+    }
+
+    @include mobile {
+      background: ('../../assets/images/banner/bg_mobile.png') center / cover no-repeat;
+    }
   }
 
   &__body {
