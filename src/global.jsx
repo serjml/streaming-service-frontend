@@ -47,7 +47,7 @@ export default function (props) {
         url={url}
         isFixed={isHeaderFixed}
       />
-      <Content>
+      <Content isResetPaddingTop={isHeaderFixed}>
         {children}
         <Banner />
       </Content>
