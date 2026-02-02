@@ -11,15 +11,22 @@ export default (props) => {
      * '' (default) | 'tile'
      */
     mode = '',
+    /**
+     * ''(default) | 'abs-bottom'
+     */
+    position = '',
+    isHiddenMobile
   } = props
 
   return (
     <div
       className={clsx('slider-navigation', className, {
         [`slider-navigation--${mode}`]: mode,
+        [`slider-navigation--${position}`]: position,
+        'hidden-mobile': isHiddenMobile
       })}
       id={id}
-      data-js-slider-naigation=""
+      data-js-slider-navigation=""
     >
       <Button
         className="slider-navigation__arrow-button slider-navigation__arrow-button--previous"
