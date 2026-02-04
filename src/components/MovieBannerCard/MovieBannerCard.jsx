@@ -15,7 +15,7 @@ export default (props) => {
       className="movie-banner-card"
     >
       <Image
-        className="movies-banner-card__image"
+        className="movie-banner-card__image"
         src={imgSrc}
       />
       <div className="movie-banner-card__inner">
@@ -29,7 +29,7 @@ export default (props) => {
         </div>
         <footer className="movie-banner-card__footer">
           <Button
-            className="movies-banner-card__play-button"
+            className="movie-banner-card__play-button"
             iconName="play"
             label="Play Now"
           />
