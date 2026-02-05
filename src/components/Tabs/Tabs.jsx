@@ -10,11 +10,14 @@ export default (props) => {
     title,
     items = [],
     navigationTargetElementId = null,
+    isEnableOnlyOnMobile = false,
   } = props
 
   return (
     <div
-      className={clsx('tabs', className)}
+      className={clsx(className, 'tabs', {
+        'tabs--enable-only-on-mobile': isEnableOnlyOnMobile,
+      })}
       data-js-tabs={JSON.stringify({navigationTargetElementId})}
     >
       {!navigationTargetElementId && (
