@@ -204,8 +204,9 @@ const collectionGroups = [
               spaceBetween: 30,
               allowTouchMove: false,
             }
+          }
         }
-      },
+      }
     ]
   }
 ]
