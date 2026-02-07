@@ -6,6 +6,7 @@ export default (props) => {
   const {
     title,
     images = [],
+    badge
   } = props
 
   return (<a
@@ -22,7 +23,10 @@ export default (props) => {
       ))}
     </div>
     <div className="category-card__body">
-      <h3 className="category-card__title">{title}</h3>
+      <h3 className="category-card__title">
+        {badge && ()}
+        <span>{title}</span>
+      </h3>
       <Icon
         className="category-card__icon"
         name="arrow-right"
