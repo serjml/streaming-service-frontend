@@ -208,7 +208,7 @@ const collectionGroups = [
         }
       },
       {
-        title: 'Tranding Now',
+        title: 'Trending Now',
         movieItems: [
           {
             title: 'Movie',
