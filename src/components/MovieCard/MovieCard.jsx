@@ -25,8 +25,21 @@ export default (
       />
       <div className="movie-card__body">
         {duration && (
-          <Badge>
+          <Badge
+            iconName="clock"
+            iconAriaLabel="Duration"
+            hasFillIcon
+          >
             {duration}
+          </Badge>
+        )}
+        {views && (
+          <Badge
+            iconName="eye"
+            iconAriaLabel="Views"
+            hasFillIcon
+          >
+            {views}
           </Badge>
         )}
       </div>
