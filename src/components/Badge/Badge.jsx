@@ -1,5 +1,6 @@
 import './Badge.scss'
 import clsx from 'clsx'
+import Icon from '@/components/Icon'
 
 export default (
   {
@@ -9,7 +10,10 @@ export default (
      */
     mode = '',
     isBig = false,
-    children
+    children,
+    iconName,
+    hasFillIcon,
+    iconAriaLabel,
   }
 ) => {
   return (
@@ -19,7 +23,15 @@ export default (
         'badge--big': isBig,
       })}
     >
-      {children}
+      {iconName && (
+        <Icon
+          className="badge__icon"
+          name={iconName}
+          hasFill={hasFillIcon}
+          ariaLabel={iconAriaLabel}
+        />
+      )}
+      <span>{children}</span>
     </div>
   )
 }
