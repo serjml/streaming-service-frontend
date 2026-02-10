@@ -366,6 +366,174 @@ const collectionGroups = [
           },
 
         ],
+      },
+      {
+        title: 'New Releases',
+        movieItems: [
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/1.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/2.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/3.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/4.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/5.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/1.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/2.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/3.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/4.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/5.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/1.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/2.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/3.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/4.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/5.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/1.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/2.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/3.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/4.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+          {
+            title: 'Movie',
+            imgSrc: '/src/assets/images/movies/5.jpg',
+            release: {
+              label: '14 April 2023',
+              dateTime: '2023-04-14',
+            },
+          },
+        ],
       }
     ]
   }

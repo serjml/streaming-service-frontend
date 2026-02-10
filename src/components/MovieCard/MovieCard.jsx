@@ -8,6 +8,7 @@ export default (
     imgSrc,
     duration,
     views,
+    release,
     href = '/movie',
   }
 ) => {
@@ -40,6 +41,11 @@ export default (
             hasFillIcon
           >
             {views}
+          </Badge>
+        )}
+        {release && (
+          <Badge className="movie-card__release-badge">
+            Released at <time dateTime={release.dateTime}>{release.label}</time>
           </Badge>
         )}
       </div>
