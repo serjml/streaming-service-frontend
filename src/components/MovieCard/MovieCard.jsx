@@ -45,7 +45,10 @@ export default (
         )}
         {release && (
           <Badge className="movie-card__release-badge">
-            Released at <time dateTime={release.dateTime}>{release.label}</time>
+            Released at <time
+            className="movie-card__release-badge-label"
+            dateTime={release.dateTime}
+          >{release.label}</time>
           </Badge>
         )}
       </div>
