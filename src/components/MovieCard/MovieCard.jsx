@@ -9,6 +9,7 @@ export default (
     duration,
     views,
     release,
+    rating,
     href = '/movie',
   }
 ) => {
@@ -34,15 +35,24 @@ export default (
             {duration}
           </Badge>
         )}
+
+        {rating && (
+          <Badge
+            className="movie-card__rating-badge "
+          >
+          </Badge>
+        )}
+
         {views && (
           <Badge
             iconName="eye"
             iconAriaLabel="Views"
             hasFillIcon
           >
-            {views}
+            
           </Badge>
         )}
+
         {release && (
           <Badge className="movie-card__release-badge">
             Released at <time
