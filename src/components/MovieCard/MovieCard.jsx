@@ -1,6 +1,7 @@
 import './MovieCard.scss'
 import {Image} from 'minista'
 import Badge from '@/components/Badge'
+import RatingView from '@/components/RatingView'
 
 export default (
   {
@@ -40,6 +41,7 @@ export default (
           <Badge
             className="movie-card__rating-badge "
           >
+            <RatingView {...rating} />
           </Badge>
         )}
 
@@ -49,7 +51,6 @@ export default (
             iconAriaLabel="Views"
             hasFillIcon
           >
-            
           </Badge>
         )}
 
