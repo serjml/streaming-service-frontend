@@ -11,6 +11,7 @@ export default (
     views,
     release,
     rating,
+    season,
     href = '/movie',
   }
 ) => {
@@ -34,6 +35,15 @@ export default (
             hasFillIcon
           >
             {duration}
+          </Badge>
+        )}
+
+        {season && (
+          <Badge
+            iconName="catalog"
+            hasFillIcon
+          >
+            {season}
           </Badge>
         )}
 
