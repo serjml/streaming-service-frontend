@@ -723,7 +723,7 @@ const collectionGroups = [
     title: 'Shows',
     items: [
       {
-        title: 'Our Genres',
+        title: 'Our Genres 2',
         categoryItems,
       },
       {
