@@ -1,8 +1,10 @@
 .collections {
-  display: flex;
-  flex-direction: column;
-  row-gap: 50px;
+  --collectionGroupPadding: #{fluid-to-laptop(50, 40)};
   padding-block: var(--section-padding-y);
+
+  &.tabs {
+    --tabsBodyRowGap: #{fluid-to-laptop(170, 134)}
+  }
 
   &__group {
     display: grid;
@@ -18,7 +20,7 @@
 
   &__title {
     position: absolute;
-    left: fluid-to-laptop(50, 40);
+    left: var(--collectionGroupPadding);
     top: 0;
     translate: 0 -50%;
     padding: fluid-to-laptop(10, 8) fluid-to-laptop(24, 20);

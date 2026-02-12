@@ -11,7 +11,7 @@ import MovieCard from '@/components/MovieCard'
 export default (props) => {
   return (
     <Tabs
-      className="collection container"
+      className="collections container"
       title="collections"
       isEnableOnlyOnMobile
       items={collectionGroups.map((collectionGroup) => ({
