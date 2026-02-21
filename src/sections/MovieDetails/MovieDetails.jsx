@@ -6,6 +6,8 @@ import Slider from '@/components/Slider'
 export default (props) => {
   const titleId = 'movie-details-title'
   const castSliderNavigationId = 'movie-cast-slider-navigation'
+
+
   return (
     <section
       className="movie-details container"
@@ -55,7 +57,7 @@ export default (props) => {
               }
             }}
           >
-            
+
           </Slider>
         </div>
         <div className="movie-details__panel"></div>
