@@ -1,12 +1,51 @@
 import './MovieDetails.scss'
 import SliderNavigation from '@/components/Slider/components/SliderNavigation'
 import Slider from '@/components/Slider'
+import PersonCard from '@/components/PersonCard'
+import Button from '@/components/Button'
 
 
 export default (props) => {
   const titleId = 'movie-details-title'
   const castSliderNavigationId = 'movie-cast-slider-navigation'
-
+  const castItems = [
+    {
+      imgSrc: '/src/assets/images/people/cast.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+    {
+      imgSrc: '/src/assets/images/people/cast.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+    {
+      imgSrc: '/src/assets/images/people/cast.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+    {
+      imgSrc: '/src/assets/images/people/cast.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+    {
+      imgSrc: '/src/assets/images/people/cast.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+    {
+      imgSrc: '/src/assets/images/people/cast.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+    {
+      imgSrc: '/src/assets/images/people/cast.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+    {
+      imgSrc: '/src/assets/images/people/cast.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+    {
+      imgSrc: '/src/assets/images/people/cast.jpg',
+      imgAlt: 'Ivan Ivanov',
+    },
+  ]
 
   return (
     <section
@@ -57,10 +96,46 @@ export default (props) => {
               }
             }}
           >
-
+            {castItems.map((castItem, index) => (
+                <PersonCard {...castItem} key={index} />
+              )
+            )}
           </Slider>
         </div>
-        <div className="movie-details__panel"></div>
+        <div className="movie-details__panel">
+          <header className="movie-details__panel-header">
+            <h3 className="movie-details__title">
+              Reviews
+            </h3>
+            <Button
+              mode="black-08"
+              iconName="plus"
+              label="Add Your Review"
+              href="/"
+            />
+          </header>
+          <Slider
+            navigationMode="rounded"
+            isNavigationHiddenMobile={false}
+            hasScrollbarOnMobile={false}
+            sliderParams={{
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+              breakpoints: {
+                0: {
+                  slidesPerView: 1,
+                  slidesPerGroup: 1,
+                  spaceBetween: 16,
+                },
+                1024: {
+                  slidesPerView: 2,
+                  slidesPerGroup: 2,
+                  allowTouchMove: false,
+                  spaceBetween: 20,
+                },
+            }}
+          ></Slider>
+        </div>
       </div>
       <aside className="movie-details__info">
         <div className="movie-details__panel"></div>

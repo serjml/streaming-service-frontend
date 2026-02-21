@@ -45,6 +45,7 @@ export default (props) => {
      * ''(default) | 'abs-bottom'
      */
     navigationPosition = '',
+    navigationMode,
     isNavigationHiddenMobile = true,
   } = props
 
@@ -77,6 +78,7 @@ export default (props) => {
       {!navigationTargetElementId && (
         <SliderNavigation
           className="slider-navigation"
+          mode={navigationMode}
           position={navigationPosition}
           isHiddenMobile={isNavigationHiddenMobile}
         />
