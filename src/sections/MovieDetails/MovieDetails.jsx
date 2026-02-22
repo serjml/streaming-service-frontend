@@ -133,6 +133,7 @@ export default (props) => {
                   allowTouchMove: false,
                   spaceBetween: 20,
                 },
+              }
             }}
           ></Slider>
         </div>
