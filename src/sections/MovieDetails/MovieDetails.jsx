@@ -3,11 +3,13 @@ import SliderNavigation from '@/components/Slider/components/SliderNavigation'
 import Slider from '@/components/Slider'
 import PersonCard from '@/components/PersonCard'
 import Button from '@/components/Button'
+import ReviewCard from '@/components/ReviewCard'
 
 
 export default (props) => {
   const titleId = 'movie-details-title'
   const castSliderNavigationId = 'movie-cast-slider-navigation'
+
   const castItems = [
     {
       imgSrc: '/src/assets/images/people/cast.jpg',
@@ -44,6 +46,57 @@ export default (props) => {
     {
       imgSrc: '/src/assets/images/people/cast.jpg',
       imgAlt: 'Ivan Ivanov',
+    },
+  ]
+
+  const reviewItems = [
+    {
+      name: 'Aniket Roy',
+      subtitle: 'From India',
+      description: 'This movie was recommended to me by a very dear friend who went for the movie by herself. I went to the cinemas to watch but had a houseful board so couldn’t watch it.',
+      ratingView: 4.5,
+    },
+    {
+      name: 'Aniket Roy',
+      subtitle: 'From India',
+      description: 'This movie was recommended to me by a very dear friend who went for the movie by herself. I went to the cinemas to watch but had a houseful board so couldn’t watch it.',
+      ratingView: 4.5,
+    },
+    {
+      name: 'Aniket Roy',
+      subtitle: 'From India',
+      description: 'This movie was recommended to me by a very dear friend who went for the movie by herself. I went to the cinemas to watch but had a houseful board so couldn’t watch it.',
+      ratingView: 4.5,
+    },
+    {
+      name: 'Aniket Roy',
+      subtitle: 'From India',
+      description: 'This movie was recommended to me by a very dear friend who went for the movie by herself. I went to the cinemas to watch but had a houseful board so couldn’t watch it.',
+      ratingView: 4.5,
+    },
+    {
+      name: 'Aniket Roy',
+      subtitle: 'From India',
+      description: 'This movie was recommended to me by a very dear friend who went for the movie by herself. I went to the cinemas to watch but had a houseful board so couldn’t watch it.',
+      ratingView: 4.5,
+    },
+    {
+      name: 'Aniket Roy',
+      subtitle: 'From India',
+      description: 'This movie was recommended to me by a very dear friend who went for the movie by herself. I went to the cinemas to watch but had a houseful board so couldn’t watch it.',
+      ratingView: 4.5,
+    },
+    {
+      name: 'Aniket Roy',
+      subtitle: 'From India',
+      description: 'This movie was recommended to me by a very dear friend who went for the movie by herself. I went to the cinemas to watch but had a houseful board so couldn’t watch it.',
+      ratingView: 4.5,
+    },
+    {
+      name: 'Aniket Roy',
+      subtitle: 'From India',
+      description: 'This movie was recommended to me by a very dear friend who went for the movie by herself. I went to the cinemas to watch but had a houseful board so couldn’t watch it.',
+      ratingView: 4.5,
     },
   ]
 
@@ -135,7 +188,11 @@ export default (props) => {
                 },
               }
             }}
-          ></Slider>
+          >
+            {reviewItems.map((reviewItem, index) => (
+              <ReviewCard {...reviewItem} key={index} />
+            ))}
+          </Slider>
         </div>
       </div>
       <aside className="movie-details__info">
