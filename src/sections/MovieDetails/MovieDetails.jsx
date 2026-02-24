@@ -115,7 +115,7 @@ export default (props) => {
         Detailed movie information
       </h2>
       <div className="movie-details__main">
-        <div className="movie-details__panel">
+        <div className="movie-details__panel movie-details__panel--description">
           <div className="movie-details__group">
             <h3 className="movie-details__title">
               Description
