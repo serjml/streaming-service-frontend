@@ -77,7 +77,7 @@ export default (props) => {
 
       {!navigationTargetElementId && (
         <SliderNavigation
-          className="slider-navigation"
+          className="slider__navigation slider-navigation"
           mode={navigationMode}
           position={navigationPosition}
           isHiddenMobile={isNavigationHiddenMobile}

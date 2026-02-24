@@ -158,7 +158,7 @@ export default (props) => {
             )}
           </Slider>
         </div>
-        <div className="movie-details__panel">
+        <div className="movie-details__panel movie-details__panel--large-gap">
           <header className="movie-details__panel-header">
             <h3 className="movie-details__title">
               Reviews
