@@ -1,3 +1,5 @@
+import ShowBanner from '@/sections/ShowBanner'
+
 export const metadata = {
   title: 'Show - Stranger Things'
 }
@@ -5,7 +7,7 @@ export const metadata = {
 export default () => {
   return (
     <>
-
+      <ShowBanner />
     </>
   )
 }
