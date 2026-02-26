@@ -120,8 +120,8 @@ export default (props) => {
       </h2>
       <div className="movie-details__main">
         {seasons && (
-          <div className="movie-details__panel">
-            <div className="movie-details__group">
+          <div className="movie-details__panel movie-details__panel--seasons">
+            <div className="movie-details__group movie-details__group--big-gap-y">
               <h3 className="h4">Seasons & Episodes</h3>
               {seasons}
             </div>
