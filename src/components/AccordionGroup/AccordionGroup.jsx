@@ -4,6 +4,10 @@ import clsx from 'clsx'
 
 export default (props) => {
   const {
+    /**
+     * ''(default) | 'dark'
+     */
+    mode = '',
     columns = 1,
     children,
     isOrderedList = true,
@@ -17,6 +21,7 @@ export default (props) => {
       className={clsx('accordion-group', {
         [`accordion-group--${columns}-columns`]: columns > 1,
         'accordion-group--has-counter': isOrderedList,
+        [`accordion-group--${mode}`]: mode,
       })}
     >
       {children.map((child, index) => (
