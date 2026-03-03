@@ -1,8 +1,11 @@
 import './Accordion.scss'
+import clsx from 'clsx'
 
 export default (props) => {
   const {
     title,
+    titleLevelClassName = 'h5',
+    subtitle,
     id,
     name,
     isOpen,
@@ -17,13 +20,16 @@ export default (props) => {
         open={isOpen}
       >
         <summary className="accordion__summary">
-          <h3 className="accordion__title h5">
+          <h3 className={clsx('accordion__title', titleLevelClassName)}>
             <span
               role="term"
               aria-details={id}
             >
               {title}
             </span>
+            {subtitle && (
+              <span className="accordion__subtitle">{subtitle}</span>
+            )}
           </h3>
         </summary>
       </details>
