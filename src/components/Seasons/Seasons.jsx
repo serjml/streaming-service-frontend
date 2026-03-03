@@ -5,8 +5,11 @@ export default () => {
 
 
   return (
-    <AccordionGroup>
-      
+    <AccordionGroup
+      mode="dark"
+      isOrderedList={false}
+    >
+
     </AccordionGroup>
   )
 }
