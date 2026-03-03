@@ -20,8 +20,9 @@ export default () => {
             name="seasons"
             isOpen={index === 0}
             key={index}
+            isArrowButton
           >
-
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nihil?
           </Accordion>
         )
       )}

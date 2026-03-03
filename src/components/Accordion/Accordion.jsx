@@ -1,5 +1,6 @@
 import './Accordion.scss'
 import clsx from 'clsx'
+import Icon from '@/components/Icon'
 
 export default (props) => {
   const {
@@ -10,6 +11,7 @@ export default (props) => {
     name,
     isOpen,
     children,
+    isArrowButton = false,
   } = props
 
   return (
@@ -29,6 +31,13 @@ export default (props) => {
             </span>
             {subtitle && (
               <span className="accordion__subtitle">{subtitle}</span>
+            )}
+            {isArrowButton && (
+              <div className="accordion__arrow">
+                <Icon
+                  name="arrow-down"
+                />
+              </div>
             )}
           </h3>
         </summary>
