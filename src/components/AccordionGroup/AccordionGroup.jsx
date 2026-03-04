@@ -4,6 +4,7 @@ import clsx from 'clsx'
 
 export default (props) => {
   const {
+    className,
     /**
      * ''(default) | 'dark'
      */
@@ -18,7 +19,7 @@ export default (props) => {
 
   return (
     <ListTag
-      className={clsx('accordion-group', {
+      className={clsx(className, 'accordion-group', {
         [`accordion-group--${columns}-columns`]: columns > 1,
         'accordion-group--has-counter': isOrderedList,
         [`accordion-group--${mode}`]: mode,

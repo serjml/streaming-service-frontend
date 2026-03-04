@@ -8,6 +8,7 @@ export default () => {
 
   return (
     <AccordionGroup
+      className="seasons"
       mode="dark"
       isOrderedList={false}
     >
@@ -22,7 +23,16 @@ export default () => {
             key={index}
             isArrowButton
           >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nihil?
+            <ul className="seasons__list">
+              {episodes.map((episode, index) => (
+                <li
+                  className="seasons__items"
+                  key={index}
+                >
+                  {episode.title}
+                </li>
+              ))}
+            </ul>
           </Accordion>
         )
       )}
