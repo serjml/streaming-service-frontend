@@ -30,13 +30,7 @@ export default () => {
                   className="seasons__items"
                   key={index}
                 >
-                  <EpisodeCard
-                    number={episode.number}
-                    title={episode.title}
-                    description={episode.description}
-                    duration={episode.duration}
-                    video={episode.video}
-                  />
+                  <EpisodeCard {...episode} />
                 </li>
               ))}
             </ul>
