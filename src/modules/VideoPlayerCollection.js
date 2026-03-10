@@ -17,6 +17,17 @@ class VideoPlayer {
     this.playButtonElement = this.rootElement.querySelector(this.selectors.playButton)
   }
 
+  onPlayButtonClick = () => {
+    this.videoElement.play()
+    this.videoElement.requestFullscreen()
+    this.videoElement.controls = true
+    this.playButtonElement.classList.remove(this.stateClasses.isActive)
+  }
+
+  onVideoPause = () => {
+
+  }
+
   bindEvents() {
     this.playButtonElement.addEventListener('click', this.onPlayButtonClick)
     this.videoElement.addEventListener('pause', this.onVideoPause)
