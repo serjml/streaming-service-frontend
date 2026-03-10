@@ -15,6 +15,7 @@ class VideoPlayer {
     this.rootElement = rootElement
     this.videoElement = this.rootElement.querySelector(this.selectors.video)
     this.playButtonElement = this.rootElement.querySelector(this.selectors.playButton)
+    this.bindEvents()
   }
 
   onPlayButtonClick = () => {
@@ -25,7 +26,8 @@ class VideoPlayer {
   }
 
   onVideoPause = () => {
-
+    this.videoElement.controls = false
+    this.playButtonElement.classList.add(this.stateClasses.isActive)
   }
 
   bindEvents() {
