@@ -30,9 +30,18 @@ class VideoPlayer {
     this.playButtonElement.classList.add(this.stateClasses.isActive)
   }
 
+  onVideoFullScreenChange = () => {
+    const isFullScreenEnabled = document.fullscreenElement === this.videoElement
+
+    if (!isFullScreenEnabled) {
+      this.videoElement.pause()
+    }
+  }
+
   bindEvents() {
     this.playButtonElement.addEventListener('click', this.onPlayButtonClick)
     this.videoElement.addEventListener('pause', this.onVideoPause)
+    this.videoElement.addEventListener('fullscreenchange', this.onVideoFullScreenChange)
   }
 }
 
