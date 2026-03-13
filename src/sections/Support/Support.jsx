@@ -35,8 +35,34 @@ export default (props) => {
         action=""
       >
         <Field
-          label="11"
-          placeholder="qweqweqw"
+          className="support__form-cell"
+          label="First Name"
+          placeholder="Ivan"
+          isRequired
+        />
+        <Field
+          className="support__form-cell"
+          label="Last Name"
+          placeholder="Ivanov"
+        />
+        <Field
+          className="support__form-cell"
+          label="Email"
+          type="email"
+          placeholder="example@example.com"
+          isRequired
+        />
+        <Field
+          className="support__form-cell"
+          label="Phone Number"
+          placeholder="(999) 999-99-99"
+          inputMode="tel"
+        />
+        <Field
+          className="support__form-cell support__form-cell--wide"
+          label="Message"
+          type="textarea"
+          placeholder="Hi! I have a question..."
           isRequired
         />
       </form>
