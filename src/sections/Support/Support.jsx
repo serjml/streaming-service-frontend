@@ -1,5 +1,7 @@
 import './Support.scss'
 import {Image} from 'minista'
+import Field from '@/components/Field'
+import getIdFromTitle from '@/utils/getIdFromTitle'
 
 export default (props) => {
   const titleId = 'support-title'
@@ -31,7 +33,13 @@ export default (props) => {
       <form
         className="support__form"
         action=""
-      ></form>
+      >
+        <Field
+          label="11"
+          placeholder="qweqweqw"
+          isRequired
+        />
+      </form>
     </section>
   )
 }

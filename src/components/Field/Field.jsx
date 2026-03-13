@@ -37,7 +37,7 @@ export default (props) => {
           className="field__control"
           id={id}
           type={type}
-          palceholder={placeholder}
+          placeholder={placeholder}
           required={isRequired}
         />
       </div>
