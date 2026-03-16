@@ -40,6 +40,7 @@
     &:required {
       & + .checkbox__label::after {
         content: ' *' / '';
+        color: var(--color-red-45);
       }
     }
 
