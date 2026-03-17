@@ -14,7 +14,8 @@ export default (props) => {
     placeholder,
     isRequired,
     inputMode,
-    mask
+    mask,
+    renderBefore
   } = props
 
   const Component = type === 'textarea' ? 'textarea' : 'input'
@@ -41,6 +42,7 @@ export default (props) => {
       )}
       </label>
       <div className="field__body">
+        {renderBefore?.('field__control')}
         <Component
           className="field__control"
           id={id}
