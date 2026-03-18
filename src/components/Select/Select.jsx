@@ -52,48 +52,48 @@ export default (props) => {
             key={index}
           >{value}</option>
         ))}
-        <div className="select__body">
-          <div
-            className={clsx('select__button', buttonClassName)}
-            role="combobox"
-            aria-expanded={false}
-            aria-haspopup="listbox"
-            aria-controls={IDs.dropdown}
-            aria-labelledby={IDs.label}
-            tabIndex={0}
-            data-js-select-button=""
-          >
-            {selectedOption.value}
-          </div>
-          <div
-            className="select__dropdown"
-            id={IDs.dropdown}
-            role="listbox"
-            aria-labelledby={IDs.label}
-            data-js-select-dropdown=""
-          >
-            {options.map((option, index) => {
-              const {value, isSelected = false} = option
-
-              return (
-                <div
-                  className={clsx('select__option', {
-                    'is-selected': isSelected,
-                    'is-current': isSelected,
-                  })}
-                  id={`${id}-option-${index}`}
-                  role="option"
-                  aria-selected={isSelected}
-                  data-js-select-option=""
-                  key={index}
-                >
-                  {value}
-                </div>
-              )
-            })}
-          </div>
-        </div>
       </select>
+      <div className="select__body">
+        <div
+          className={clsx('select__button', buttonClassName)}
+          role="combobox"
+          aria-expanded={false}
+          aria-haspopup="listbox"
+          aria-controls={IDs.dropdown}
+          aria-labelledby={IDs.label}
+          tabIndex={0}
+          data-js-select-button=""
+        >
+          {selectedOption.value}
+        </div>
+        <div
+          className="select__dropdown"
+          id={IDs.dropdown}
+          role="listbox"
+          aria-labelledby={IDs.label}
+          data-js-select-dropdown=""
+        >
+          {options.map((option, index) => {
+            const {value, isSelected = false} = option
+
+            return (
+              <div
+                className={clsx('select__option', {
+                  'is-selected': isSelected,
+                  'is-current': isSelected,
+                })}
+                id={`${id}-option-${index}`}
+                role="option"
+                aria-selected={isSelected}
+                data-js-select-option=""
+                key={index}
+              >
+                {value}
+              </div>
+            )
+          })}
+        </div>
+      </div>
     </div>
   )
 }
