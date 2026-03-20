@@ -42,7 +42,7 @@ class Select extends BaseComponent {
 
     setTimeout(this.fixDropdownPosition, 500)
     this.updateTabIndexes()
-    this.bindEvents
+    this.bindEvents()
   }
 
   updateUI() {
@@ -103,6 +103,18 @@ class Select extends BaseComponent {
     this.buttonElement.tabIndex = isMobileDevice ? -1 : 0
   }
 
+  toggleExpandedState() {
+    this.state.isExpanded = !this.state.isExpanded
+  }
+
+  expand() {
+    this.state.isExpanded = true
+  }
+
+  collapse() {
+    this.state.isExpanded = false
+  }
+
   onMobileMatchMediaChange = (event) => {
     this.updateTabIndexes(event.matches)
   }
@@ -111,9 +123,14 @@ class Select extends BaseComponent {
     this.state.selectedOptionElement = this.optionElements[this.originalControlElement.selectedIndex]
   }
 
+  onButtonClick = () => {
+    this.toggleExpandedState()
+  }
+
   bindEvents() {
     MatchMedia.mobile.addEventListener('change', this.onMobileMatchMediaChange)
     this.originalControlElement.addEventListener('change', this.onOriginalControlChange)
+    this.buttonElement.addEventListener('click', this.onButtonClick)
   }
 }
 
