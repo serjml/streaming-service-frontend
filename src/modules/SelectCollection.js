@@ -36,8 +36,50 @@ class Select extends BaseComponent {
     this.state = this.getProxyState({
       ...this.initialState,
       currentOptionIndex: this.originalControlElement.selectedIndex,
-      selectedOptionElement: this.optionElements[this.originalControlElement.selectedIndex]
+      selectedOptionElement: this.optionElements[this.originalControlElement.selectedIndex],
     })
+  }
+
+  updateUI() {
+    const {
+      isExpanded,
+      currentOptionIndex,
+      selectedOptionElement,
+    } = this.state
+
+    const newSelectedOptionValue = selectedOptionElement.textContent.trim()
+
+
+    const updateOriginalControl = () => {
+      this.originalControlElement.value = newSelectedOptionValue
+    }
+
+    const updateButton = () => {
+      this.buttonElement.textContent = newSelectedOptionValue
+      this.buttonElement.classList.toggle(this.stateClasses.isExpanded, isExpanded)
+      this.buttonElement.ariaExpanded = isExpanded
+      this.buttonElement.ariaActiveDescendant = this.optionElements[currentOptionIndex].id
+    }
+
+    const updateDropdown = () => {
+      this.dropdownElement.classList.toggle(this.stateClasses.isExpanded, isExpanded)
+    }
+
+    const updateOptions = () => {
+      this.optionElements.forEach((optionElement, index) => {
+        const isCurrent = currentOptionIndex === index
+        const isSelected = selectedOptionElement === optionElement
+
+        optionElement.classList.toggle(this.stateClasses.isCurrent, isCurrent)
+        optionElement.classList.toggle(this.stateClasses.isSelected, isSelected)
+        optionElement.ariaSelected = isSelected
+      })
+    }
+
+    updateOriginalControl()
+    updateButton()
+    updateDropdown()
+    updateOptions()
   }
 }
 
