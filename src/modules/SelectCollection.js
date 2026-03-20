@@ -1,4 +1,5 @@
 import BaseComponent from '@/modules/generic/BaseComponent'
+import MatchMedia from '@/constants/MatchMedia'
 
 const rootSelector = '[data-js-select]'
 
@@ -38,6 +39,9 @@ class Select extends BaseComponent {
       currentOptionIndex: this.originalControlElement.selectedIndex,
       selectedOptionElement: this.optionElements[this.originalControlElement.selectedIndex],
     })
+
+    setTimeout(this.fixDropdownPosition, 500)
+    this.updateTabIndexes()
   }
 
   updateUI() {
@@ -91,6 +95,11 @@ class Select extends BaseComponent {
 
     this.dropdownElement.classList.toggle(this.stateClasses.isOnTheLeftSide, isButtonOnTheLeftViewportSide)
     this.dropdownElement.classList.toggle(this.stateClasses.isOnTheRightSide, !isButtonOnTheLeftViewportSide)
+  }
+
+  updateTabIndexes(isMobileDevice = MatchMedia.mobile.matches) {
+    this.originalControlElement.tabIndex = isMobileDevice ? 0 : -1
+    this.buttonElement.tabIndex = isMobileDevice ? -1 : 0
   }
 }
 
