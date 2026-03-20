@@ -42,6 +42,7 @@ class Select extends BaseComponent {
 
     setTimeout(this.fixDropdownPosition, 500)
     this.updateTabIndexes()
+    this.bindEvents
   }
 
   updateUI() {
@@ -100,6 +101,14 @@ class Select extends BaseComponent {
   updateTabIndexes(isMobileDevice = MatchMedia.mobile.matches) {
     this.originalControlElement.tabIndex = isMobileDevice ? 0 : -1
     this.buttonElement.tabIndex = isMobileDevice ? -1 : 0
+  }
+
+  onMobileMatchMediaChange = (event) => {
+    this.updateTabIndexes(event.matches)
+  }
+
+  bindEvents() {
+    MatchMedia.mobile.addEventListener('change', this.onMobileMatchMediaChange)
   }
 }
 
