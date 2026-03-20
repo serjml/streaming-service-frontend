@@ -107,8 +107,13 @@ class Select extends BaseComponent {
     this.updateTabIndexes(event.matches)
   }
 
+  onOriginalControlChange = () => {
+    this.state.selectedOptionElement = this.optionElements[this.originalControlElement.selectedIndex]
+  }
+
   bindEvents() {
     MatchMedia.mobile.addEventListener('change', this.onMobileMatchMediaChange)
+    this.originalControlElement.addEventListener('change', this.onOriginalControlChange)
   }
 }
 
