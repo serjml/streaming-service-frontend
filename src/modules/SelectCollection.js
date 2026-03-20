@@ -25,6 +25,20 @@ class Select extends BaseComponent {
     selectedOptionElement: null,
   }
 
+  constructor(rootElement) {
+    super()
+    this.rootElement = rootElement
+    this.originalControlElement = this.rootElement.querySelector(this.selectors.originalControl)
+    this.buttonElement = this.rootElement.querySelector(this.selectors.button)
+    this.dropdownElement = this.rootElement.querySelector(this.selectors.dropdown)
+    this.optionElements = this.dropdownElement.querySelectorAll(this.selectors.option)
+
+    this.state = this.getProxyState({
+      ...this.initialState,
+      currentOptionIndex: this.originalControlElement.selectedIndex,
+      selectedOptionElement: this.optionElements[this.originalControlElement.selectedIndex]
+    })
+  }
 }
 
 class SelectCollection {
