@@ -115,6 +115,16 @@ class Select extends BaseComponent {
     this.state.isExpanded = false
   }
 
+  get isNeedToExpand() {
+    const isButtonFocused = document.activeElement === this.buttonElement
+
+    return (!this.state.isExpanded && isButtonFocused)
+  }
+
+  selectCurrentOption() {
+    this.state.selectedOptionElement = this.optionElements[this.state.currentOptionIndex]
+  }
+
   onMobileMatchMediaChange = (event) => {
     this.updateTabIndexes(event.matches)
   }
@@ -146,14 +156,44 @@ class Select extends BaseComponent {
   }
 
   onArrowUpKeyDown = () => {
+    if (this.isNeedToExpand) {
+      this.expand()
+      return
+    }
+
+    if (this.state.currentOptionIndex > 0) {
+      this.state.currentOptionIndex--
+    }
   }
   onArrowDownKeyDown = () => {
+    if (this.isNeedToExpand) {
+      this.expand()
+      return
+    }
+
+    if (this.state.currentOptionIndex < this.optionElements.length - 1) {
+      this.state.currentOptionIndex++
+    }
   }
   onSpaceKeyDown = () => {
+    if (this.isNeedToExpand) {
+      this.expand()
+      return
+    }
+
+    this.selectCurrentOption()
+    this.collapse()
   }
   onEnterKeyDown = () => {
+    if (this.isNeedToExpand) {
+      this.expand()
+      return
+    }
+
+    this.selectCurrentOption()
+    this.collapse()
   }
-  
+
   onKeyDown = (event) => {
     const {code} = event
 
