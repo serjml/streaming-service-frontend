@@ -194,6 +194,10 @@ class Select extends BaseComponent {
     this.collapse()
   }
 
+  onEscapeDown = () => {
+    this.collapse()
+  }
+
   onKeyDown = (event) => {
     const {code} = event
 
@@ -202,6 +206,7 @@ class Select extends BaseComponent {
       ArrowDown: this.onArrowDownKeyDown,
       Space: this.onSpaceKeyDown,
       Enter: this.onEnterKeyDown,
+      Escape: this.onEscapeDown,
     }[code]
 
     if (action) {
