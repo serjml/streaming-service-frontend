@@ -127,10 +127,29 @@ class Select extends BaseComponent {
     this.toggleExpandedState()
   }
 
+  onClick = ({target}) => {
+    const isButtonClick = target === this.buttonElement
+    const isOutsideDropdownClick = target.closest(this.selectors.dropdown) !== this.dropdownElement
+
+    if (!isButtonClick && isOutsideDropdownClick) {
+      this.collapse()
+      return
+    }
+
+    const isOptionClick = target.matches(this.selectors.option)
+
+    if (isOptionClick) {
+      this.state.selectedOptionElement = target
+      this.state.currentOptionIndex = [...this.optionElements].findIndex((optionElement) => optionElement === target)
+      this.collapse()
+    }
+  }
+
   bindEvents() {
     MatchMedia.mobile.addEventListener('change', this.onMobileMatchMediaChange)
     this.originalControlElement.addEventListener('change', this.onOriginalControlChange)
     this.buttonElement.addEventListener('click', this.onButtonClick)
+    document.addEventListener('click', this.onClick)
   }
 }
 
