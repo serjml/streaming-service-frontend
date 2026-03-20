@@ -145,11 +145,37 @@ class Select extends BaseComponent {
     }
   }
 
+  onArrowUpKeyDown = () => {
+  }
+  onArrowDownKeyDown = () => {
+  }
+  onSpaceKeyDown = () => {
+  }
+  onEnterKeyDown = () => {
+  }
+  
+  onKeyDown = (event) => {
+    const {code} = event
+
+    const action = {
+      ArrowUp: this.onArrowUpKeyDown,
+      ArrowDown: this.onArrowDownKeyDown,
+      Space: this.onSpaceKeyDown,
+      Enter: this.onEnterKeyDown,
+    }[code]
+
+    if (action) {
+      event.preventDefault()
+      action()
+    }
+  }
+
   bindEvents() {
     MatchMedia.mobile.addEventListener('change', this.onMobileMatchMediaChange)
     this.originalControlElement.addEventListener('change', this.onOriginalControlChange)
     this.buttonElement.addEventListener('click', this.onButtonClick)
     document.addEventListener('click', this.onClick)
+    this.rootElement.addEventListener('keydown', this.onKeyDown)
   }
 }
 
