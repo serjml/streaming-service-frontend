@@ -1,6 +1,8 @@
 table {
   --tableBorder: var(--border);
 
+  display: grid;
+  row-gap: 2-px;
   border: var(--tableBorder);
   border-collapse: separate;
   border-radius: var(--border-radius-l);
