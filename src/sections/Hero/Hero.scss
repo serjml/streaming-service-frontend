@@ -16,14 +16,14 @@
     --heroGradientHeight: 67.5%;
 
     --heroGradientTop: linear-gradient(
-      to bottom,
-      var( --heroGradientColorStart) 0%,
-      var(--heroGradientColorEnd) 100%
+        to bottom,
+        var(--heroGradientColorStart) 0%,
+        var(--heroGradientColorEnd) 100%
     ) 50% 0/100% var(--heroGradientHeight);
 
     --heroGradientBottom: linear-gradient(
         to top,
-        var( --heroGradientColorStart) 0%,
+        var(--heroGradientColorStart) 0%,
         var(--heroGradientColorEnd) 100%
     ) 50% 101%/100% var(--heroGradientHeight);
 
@@ -32,10 +32,9 @@
     flex-grow: 1;
     padding-top: fluid(195, 150);
     padding-bottom: fluid(131, 50);
-    background:
-      var(--heroGradientTop),
-      var(--heroGradientBottom),
-      url('../../assets/images/hero/bg.png') 50%/cover;
+    background: var(--heroGradientTop),
+    var(--heroGradientBottom),
+    url('@/assets/images/hero/bg.png') 50%/cover;
     background-repeat: no-repeat;
   }
 
@@ -57,6 +56,6 @@
   }
 
   &__body {
-    padding-bottom: fluid(50, 20 );
+    padding-bottom: fluid(50, 20);
   }
 }
