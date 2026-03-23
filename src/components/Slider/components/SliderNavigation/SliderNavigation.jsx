@@ -17,6 +17,7 @@ export default (props) => {
     position = '',
     isHiddenMobile,
     buttonMode = 'black-10',
+    justifyContent
   } = props
 
   return (
@@ -24,7 +25,8 @@ export default (props) => {
       className={clsx('slider-navigation', className, {
         [`slider-navigation--${mode}`]: mode,
         [`slider-navigation--${position}`]: position,
-        'hidden-mobile': isHiddenMobile
+        'hidden-mobile': isHiddenMobile,
+        [`slider-navigation--${justifyContent}`]: justifyContent,
       })}
       id={id}
       data-js-slider-navigation=""

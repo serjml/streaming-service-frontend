@@ -47,6 +47,7 @@ export default (props) => {
     navigationPosition = '',
     navigationMode,
     isNavigationHiddenMobile = true,
+    navigationJustifyContent,
   } = props
 
   return (
@@ -81,6 +82,7 @@ export default (props) => {
           mode={navigationMode}
           position={navigationPosition}
           isHiddenMobile={isNavigationHiddenMobile}
+          justifyContent={navigationJustifyContent}
         />
       )}
 
